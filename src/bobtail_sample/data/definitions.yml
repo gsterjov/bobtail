@@ -1,0 +1,76 @@
+nodes:
+  request_sleep:
+    intents:
+      - request_sleep
+    requirements:
+      - node: ready_for_bed
+    actions:
+      - message: "Sure, go nuts"
+      - ask:
+          question: "Would you also like me to tuck you in?"
+          responses:
+            'yes': tuck_in
+            'no': goodbye
+
+
+  ready_for_bed:
+    requirements:
+      - node: chores
+        unsatisfied:
+          - message: "It's not gonna get itself done my friend"
+          - react: badbye
+      - node: grooming
+        unsatisfied:
+          - message: "No one likes doing it but social conventions demand it"
+          - react: badbye
+      - node: said_goodnight
+        unsatisfied:
+          - message: "Cats are really cute and they lower your blood pressure. You _want_ to do this"
+          - react: badbye
+
+
+  chores:
+    actions:
+      - ask:
+          question: "Did you complete your chores?"
+          responses:
+            'yes': all_chores
+
+  all_chores:
+    actions:
+      - ask: "all of them?"
+
+
+  grooming:
+    actions:
+      - ask: "Did you clean yourself up?"
+
+
+  said_goodnight:
+    actions:
+      - ask: "Did you say goodnight to your cat?"
+
+        
+  goodbye:
+    actions:
+      - message: "Have a great sleep :)"
+      - quit:
+
+
+  badbye:
+    actions:
+      - message: "Sorry, the day isn't over for you just yet :("
+      - quit:
+
+
+  tuck_in:
+    intents:
+      - tuck_in
+    requirements:
+      - node: ready_for_bed
+        unsatisfied:
+          - message: "I can't tuck you in if you aren't allowed to sleep yet"
+          - react: badbye
+    actions:
+      - message: "There you go, all tucked in"
+      - react: goodbye

@@ -1,0 +1,66 @@
+{
+    "rasa_nlu_data": {
+        "common_examples": [
+            {
+                "text": "yes",
+                "intent": "yes",
+                "entities": []
+            },
+            {
+                "text": "yep",
+                "intent": "yes",
+                "entities": []
+            },
+            {
+                "text": "yes",
+                "intent": "yes",
+                "entities": []
+            },
+            {
+                "text": "yes",
+                "intent": "yes",
+                "entities": []
+            },
+            {
+                "text": "yes",
+                "intent": "yes",
+                "entities": []
+            },
+            {
+                "text": "yes",
+                "intent": "yes",
+                "entities": []
+            },
+            {
+                "text": "nah",
+                "intent": "no",
+                "entities": []
+            },
+            {
+                "text": "no",
+                "intent": "no",
+                "entities": []
+            },
+            {
+                "text": "no",
+                "intent": "no",
+                "entities": []
+            },
+            {
+                "text": "no",
+                "intent": "no",
+                "entities": []
+            },
+            {
+                "text": "no",
+                "intent": "no",
+                "entities": []
+            },
+            {
+                "text": "no",
+                "intent": "no",
+                "entities": []
+            }
+        ]
+    }
+}

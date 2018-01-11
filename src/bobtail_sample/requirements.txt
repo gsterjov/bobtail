@@ -1,0 +1,8 @@
+rasa_nlu
+spacy
+scikit-learn
+scipy
+sklearn-crfsuite
+git+https://github.com/mit-nlp/MITIE.git
+
+pyaml

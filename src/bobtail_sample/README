@@ -1,0 +1,3 @@
+python -m spacy download en
+
+mitie models: https://github.com/mit-nlp/MITIE/releases

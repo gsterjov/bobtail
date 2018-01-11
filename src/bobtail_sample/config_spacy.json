@@ -1,0 +1,5 @@
+{
+  "pipeline": "spacy_sklearn",
+  "path" : "./projects",
+  "data" : "./data/training/yes_no_simple.json"
+}
