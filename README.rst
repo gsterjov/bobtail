@@ -7,8 +7,6 @@ Overview
 
 A dialogue system for NLP interpreters.
 
-* Free software: MIT license
-
 Installation
 ============
 
