@@ -1,5 +1,5 @@
 from pyaml import yaml
-from node import Node
+from bobtail.node import Node
 
 
 class NodeSoup(object):

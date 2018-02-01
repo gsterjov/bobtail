@@ -1,4 +1,4 @@
-from actions import Action
+from bobtail.actions import Action
 
 
 class Requirement(object):

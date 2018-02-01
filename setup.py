@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
+
 from __future__ import absolute_import
 from __future__ import print_function
 
 import io
 import re
 from glob import glob
+from codecs import open
+from os.path import abspath
 from os.path import basename
 from os.path import dirname
 from os.path import join
@@ -14,23 +17,19 @@ from os.path import splitext
 from setuptools import find_packages
 from setuptools import setup
 
+here = abspath(dirname(__file__))
 
-def read(*names, **kwargs):
-    return io.open(
-        join(dirname(__file__), *names),
-        encoding=kwargs.get('encoding', 'utf8')
-    ).read()
-
+# Get the long description from the README file
+with open(join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = re.compile('^.. start-badges.*^.. end-badges',
+                                  re.M | re.S).sub('', f.read())
 
 setup(
     name='bobtail',
     version='0.1.0',
     license='LGPL',
     description='A dialogue system for NLP interpreters',
-    long_description='%s\n%s' % (
-        re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
-        re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
-    ),
+    long_description=long_description,
     author='Goran Sterjov',
     author_email='git@goran.email',
     url='https://github.com/gsterjov/bobtail',
@@ -41,37 +40,24 @@ setup(
     zip_safe=False,
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: LGPL License',
         'Operating System :: Unix',
         'Operating System :: POSIX',
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy',
-        # uncomment if you test on these interpreters:
-        # 'Programming Language :: Python :: Implementation :: IronPython',
-        # 'Programming Language :: Python :: Implementation :: Jython',
-        # 'Programming Language :: Python :: Implementation :: Stackless',
-        'Topic :: Utilities',
     ],
     keywords=[
-        # eg: 'keyword1', 'keyword2', 'keyword3',
+        'nlp', 'natural', 'language', 'processing', 'dialogue', 'dialog',
+        'system', 'chatbot'
     ],
-    install_requires=[
-    ],
+    install_requires=[],
     extras_require={
         # eg:
         #   'rst': ['docutils>=0.11'],
         #   ':python_version=="2.6"': ['argparse'],
     },
-    entry_points={
-    },
-)
+    entry_points={}, )

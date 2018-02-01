@@ -1,6 +1,5 @@
 import sys
 sys.path.append('../')
-sys.path.append('../bobtail')
 
 from rasa_nlu.converters import load_data
 from rasa_nlu.config import RasaNLUConfig

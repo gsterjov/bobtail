@@ -1,5 +1,5 @@
-from requirement import Requirement
-from actions import Action
+from bobtail.requirement import Requirement
+from bobtail.actions import Action
 
 
 class Node(object):
